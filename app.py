@@ -30,7 +30,7 @@ def option_selected(event):
     for widget in frame.winfo_children():
         widget.destroy()
 
-    if selected_option == "Taylor":
+    if selected_option == "Taylor y cota":
         create_option1_widgets()
     elif selected_option == "Bisección":
         create_option2_widgets()
@@ -77,14 +77,19 @@ def create_option1_widgets():
     entry3 = tk.Entry(frame)
     entry3.pack()
 
+    tk.Label(frame, text="x_ (para la cota):").pack()
+    entry4 = tk.Entry(frame)
+    entry4.pack()
+
     # Función específica para la Opción 1
     def option1_function():
         value1 = entry1.get()
         f = eval(value1)
-        value2 = int(entry2.get())
-        value3 = int(entry3.get())
+        x0 = int(entry2.get())
+        n = int(entry3.get())
+        x_ = int(entry4.get())
         # Lógica para la Opción 1
-        tk.Label(frame, text=f"{taylor(f, value2, value3)}").pack()
+        tk.Label(frame, text=f"La serie de Taylor es: {taylor(f, x0, n)} y la cota del error es {Cota_t(f, x_, n, x0)}").pack()
 
     tk.Button(frame, text="Ejecutar", command=option1_function).pack()
 
@@ -654,7 +659,7 @@ def create_option15_widgets():
 root = tk.Tk()
 root.geometry("500x500")
 root.title("Formulario con Select")
-comboValues = ["Seleccione una opción", "Taylor", "Bisección", "Falsa posición", "Secantes", "Newton", "Lagrange",
+comboValues = ["Seleccione una opción", "Taylor y cota", "Bisección", "Falsa posición", "Secantes", "Newton", "Lagrange",
                "Polinomial simple", "Minimos Cuadrados",
                "Modelo a un solo termino", "Euler", "Runge-Kutta Orden 4", "Trapecio", "Simpson 1/3", "Simpson 3/8",
                "Trapecio con Datos"]
