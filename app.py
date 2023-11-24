@@ -1,9 +1,9 @@
 import matplotlib
 
 matplotlib.use('Agg')
+import numpy as np
 import tkinter as tk
 from tkinter import ttk
-import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from mods import *
@@ -89,7 +89,8 @@ def create_option1_widgets():
         n = int(entry3.get())
         x_ = int(entry4.get())
         # Lógica para la Opción 1
-        tk.Label(frame, text=f"La serie de Taylor es: {taylor(f, x0, n)} y la cota del error es {Cota_t(f, x_, n, x0)}").pack()
+        tk.Label(frame,
+                 text=f"La serie de Taylor es: {taylor(f, x0, n)} y la cota del error es {Cota_t(f, x_, n, x0)}").pack()
 
     tk.Button(frame, text="Ejecutar", command=option1_function).pack()
 
@@ -140,7 +141,7 @@ def create_option2_widgets():
 
 
 def create_option3_widgets():
-    # Crea los widgets específicos para la Opción 2
+    # Crea los widgets específicos para la Opción 3
     tk.Label(frame, text="Función:").pack()
     entry_option21 = tk.Entry(frame)
     entry_option21.pack()
@@ -185,7 +186,7 @@ def create_option3_widgets():
 
 
 def create_option4_widgets():
-    # Crea los widgets específicos para la Opción 2
+    # Crea los widgets específicos para la Opción 4
     tk.Label(frame, text="Función:").pack()
     entry_option21 = tk.Entry(frame)
     entry_option21.pack()
@@ -230,7 +231,7 @@ def create_option4_widgets():
 
 
 def create_option5_widgets():
-    # Crea los widgets específicos para la Opción 2
+    # Crea los widgets específicos para la Opción 5
     tk.Label(frame, text="Función:").pack()
     entry_option21 = tk.Entry(frame)
     entry_option21.pack()
@@ -270,7 +271,7 @@ def create_option5_widgets():
 
 
 def create_option6_widgets():
-    # Crea los widgets específicos para la Opción 2
+    # Crea los widgets específicos para la Opción 6
     tk.Label(frame, text="Ingrese el arreglo entre corchetes y separado por coma").pack()
     tk.Label(frame, text="Datos en X:").pack()
     entry_option21 = tk.Entry(frame)
@@ -301,7 +302,7 @@ def create_option6_widgets():
 
 
 def create_option7_widgets():
-    # Crea los widgets específicos para la Opción 2
+    # Crea los widgets específicos para la Opción 7
     tk.Label(frame, text="Ingrese el arreglo entre corchetes y separado por coma").pack()
     tk.Label(frame, text="Datos en X:").pack()
     entry_option21 = tk.Entry(frame)
@@ -333,7 +334,7 @@ def create_option7_widgets():
 
 
 def create_option8_widgets():
-    # Crea los widgets específicos para la Opción 2
+    # Crea los widgets específicos para la Opción 8
     tk.Label(frame, text="Ingrese el arreglo entre corchetes y separado por coma").pack()
     tk.Label(frame, text="Datos en X:").pack()
     entry_option21 = tk.Entry(frame)
@@ -365,6 +366,7 @@ def create_option8_widgets():
 
 
 def create_option9_widgets():
+    # Crea los widgets específicos para la Opción 9
     tk.Label(frame, text="Ingrese el arreglo entre corchetes y separado por coma").pack()
     tk.Label(frame, text="Datos en X:").pack()
     entry_option21 = tk.Entry(frame)
@@ -448,6 +450,7 @@ def create_option9_widgets():
 
 
 def create_option10_widgets():
+    # Crea los widgets específicos para la Opción 10
     tk.Label(frame, text="Función:").pack()
     entry_option21 = tk.Entry(frame)
     entry_option21.pack()
@@ -493,6 +496,7 @@ def create_option10_widgets():
 
 
 def create_option11_widgets():
+    # Crea los widgets específicos para la Opción 11
     tk.Label(frame, text="Función:").pack()
     entry_option21 = tk.Entry(frame)
     entry_option21.pack()
@@ -538,6 +542,7 @@ def create_option11_widgets():
 
 
 def create_option12_widgets():
+    # Crea los widgets específicos para la Opción 12
     tk.Label(frame, text="Función:").pack()
     entry_option21 = tk.Entry(frame)
     entry_option21.pack()
@@ -570,6 +575,7 @@ def create_option12_widgets():
 
 
 def create_option13_widgets():
+    # Crea los widgets específicos para la Opción 13
     tk.Label(frame, text="Función:").pack()
     entry_option21 = tk.Entry(frame)
     entry_option21.pack()
@@ -602,6 +608,7 @@ def create_option13_widgets():
 
 
 def create_option14_widgets():
+    # Crea los widgets específicos para la Opción 14
     tk.Label(frame, text="Función:").pack()
     entry_option21 = tk.Entry(frame)
     entry_option21.pack()
@@ -634,7 +641,7 @@ def create_option14_widgets():
 
 
 def create_option15_widgets():
-    # Crea los widgets específicos para la Opción 2
+    # Crea los widgets específicos para la Opción 15
     tk.Label(frame, text="Ingrese el arreglo entre corchetes y separado por coma").pack()
     tk.Label(frame, text="Datos en X:").pack()
     entry_option21 = tk.Entry(frame)
@@ -659,7 +666,8 @@ def create_option15_widgets():
 root = tk.Tk()
 root.geometry("500x500")
 root.title("Formulario con Select")
-comboValues = ["Seleccione una opción", "Taylor y cota", "Bisección", "Falsa posición", "Secantes", "Newton", "Lagrange",
+comboValues = ["Seleccione una opción", "Taylor y cota", "Bisección", "Falsa posición", "Secantes", "Newton",
+               "Lagrange",
                "Polinomial simple", "Minimos Cuadrados",
                "Modelo a un solo termino", "Euler", "Runge-Kutta Orden 4", "Trapecio", "Simpson 1/3", "Simpson 3/8",
                "Trapecio con Datos"]
