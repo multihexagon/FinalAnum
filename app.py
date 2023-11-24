@@ -87,10 +87,18 @@ def create_option1_widgets():
         f = eval(value1)
         x0 = int(entry2.get())
         n = int(entry3.get())
-        x_ = int(entry4.get())
+        if entry4.get() == '':
+            x_ = False
+        else:
+            x_= int(entry4.get())
         # Lógica para la Opción 1
-        tk.Label(frame,
-                 text=f"La serie de Taylor es: {taylor(f, x0, n)} y la cota del error es {Cota_t(f, x_, n, x0)}").pack()
+        if x_ is False:
+            tk.Label(frame,
+                     text=f"La serie de Taylor es: {taylor(f, x0, n)}").pack()
+        else:
+            tk.Label(frame,
+                     text=f"La serie de Taylor es: {taylor(f, x0, n)} y la cota del error es {Cota_t(f, x_, n, x0)}").pack()
+
 
     tk.Button(frame, text="Ejecutar", command=option1_function).pack()
 
@@ -384,7 +392,6 @@ def create_option9_widgets():
 
         plt.subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=0.9, hspace=0.9)
         fig, axes = plt.subplots(nrows=3, ncols=3, figsize=(12, 12))
-        axes.clear()
         plt.figure(figsize=(2, 2))
         fig.suptitle('Análisis de Datos')
 
